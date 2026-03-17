@@ -110,9 +110,16 @@ printf '%s\n' "$TOKEN" | "$CLI" --password-stdin put \
   '/AEROFTP-GITHUB-PROVIDER-LIVE-TEST-2026-03-17.md'
 ```
 
-Result: PENDING DURING LOCAL REPORT CREATION
+Result: PASS
 
-This step is the intentional live write verification. Once uploaded, the report itself becomes the proof artifact stored in the playground repository.
+Observed values:
+
+- Remote path: `/AEROFTP-GITHUB-PROVIDER-LIVE-TEST-2026-03-17.md`
+- Uploaded size: `3878 bytes`
+- Transfer speed observed by CLI: about `5.2 KB/s`
+- Transfer time observed by CLI: about `0.7 s`
+
+This step was the intentional live write verification. The report itself is now the proof artifact stored in the playground repository.
 
 ### 6. Verify uploaded report via stat and cat
 
@@ -130,7 +137,17 @@ printf '%s\n' "$TOKEN" | "$CLI" --password-stdin cat \
   '/AEROFTP-GITHUB-PROVIDER-LIVE-TEST-2026-03-17.md'
 ```
 
-Result: PENDING DURING LOCAL REPORT CREATION
+Result: PASS
+
+Observed values from remote verification:
+
+- `name = AEROFTP-GITHUB-PROVIDER-LIVE-TEST-2026-03-17.md`
+- `path = AEROFTP-GITHUB-PROVIDER-LIVE-TEST-2026-03-17.md`
+- `is_dir = false`
+- `size = 3878`
+- `owner = axpnet`
+
+The first 30 lines were read back successfully from GitHub after upload.
 
 ## Notes
 
@@ -141,8 +158,18 @@ Result: PENDING DURING LOCAL REPORT CREATION
 
 ## Expected final outcome
 
-After the upload and verification steps complete, the playground repository should contain this file:
+The playground repository now contains this file:
 
 `/AEROFTP-GITHUB-PROVIDER-LIVE-TEST-2026-03-17.md`
 
 That file is intended to remain in the repository as a permanent, auditable artifact of the GitHub provider live test session.
+
+## Final status
+
+Live playground verification completed successfully.
+
+- Read path: PASS
+- Metadata path: PASS
+- Content read path: PASS
+- Write path: PASS
+- Remote artifact verification: PASS
