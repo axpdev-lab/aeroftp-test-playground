@@ -115,9 +115,9 @@ Result: PASS
 Observed values:
 
 - Remote path: `/AEROFTP-GITHUB-PROVIDER-LIVE-TEST-2026-03-17.md`
-- Uploaded size: `3878 bytes`
-- Transfer speed observed by CLI: about `5.2 KB/s`
-- Transfer time observed by CLI: about `0.7 s`
+- Uploaded size: `4444 bytes`
+- Transfer speed observed by CLI: about `5.1 KB/s`
+- Transfer time observed by CLI: about `0.8 s`
 
 This step was the intentional live write verification. The report itself is now the proof artifact stored in the playground repository.
 
@@ -144,7 +144,7 @@ Observed values from remote verification:
 - `name = AEROFTP-GITHUB-PROVIDER-LIVE-TEST-2026-03-17.md`
 - `path = AEROFTP-GITHUB-PROVIDER-LIVE-TEST-2026-03-17.md`
 - `is_dir = false`
-- `size = 3878`
+- `size = 4444`
 - `owner = axpnet`
 
 The first 30 lines were read back successfully from GitHub after upload.
