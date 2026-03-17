@@ -1,0 +1,22 @@
+name: AeroFTP Playground Proof
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - AEROFTP-GITHUB-PROVIDER-LIVE-TEST-2026-03-17.md
+      - .github/workflows/aeroftp-playground-proof.yml
+
+jobs:
+  verify-proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify live-test artifact
+        run: |
+          set -e
+          test -f AEROFTP-GITHUB-PROVIDER-LIVE-TEST-2026-03-17.md
+          wc -c AEROFTP-GITHUB-PROVIDER-LIVE-TEST-2026-03-17.md
+          sha256sum AEROFTP-GITHUB-PROVIDER-LIVE-TEST-2026-03-17.md
