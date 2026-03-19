@@ -9,4 +9,6 @@ This repository is used for testing the AeroFTP GitHub provider integration.
 - GitHub Pages deployment
 - GitHub Actions workflows
 
+- edited by AeroFTP monaco editor!
+
 **Do not use for production data.**
